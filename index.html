@@ -170,11 +170,11 @@
                 const previewElement = document.createElement('div');
                 previewElement.className = 'preview';
                 previewElement.innerHTML = `
-                        <h3>文件 ${i+1}</h3>
-                        <pre>${escapeHtml(splitTexts[i])}</pre>
-                        <button class="copy-btn" data-index="${i}">复制文本</button>
-                        <button class="download-btn" data-index="${i}">下载文件</button>
-                    `;
+            <h3>File ${i+1}</h3>
+            <pre>${escapeHtml(splitTexts[i])}</pre>
+            <button class="copy-btn" data-index="${i}">Copy Text</button>
+            <button class="download-btn" data-index="${i}">Download File</button>
+        `;
                 preview.appendChild(previewElement);
             }
         }
@@ -190,8 +190,8 @@
 
         function copyText(index) {
             navigator.clipboard.writeText(splitTexts[index])
-                .then(() => alert('文本已复制到剪贴板'))
-                .catch((error) => alert('复制失败: ' + error));
+                .then(() => alert('Text copied to clipboard'))
+                .catch((error) => alert('Failed to copy: ' + error));
         }
 
         function downloadFile(index) {
